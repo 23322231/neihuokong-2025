@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>永豐銀行內控管理線上測驗通知</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', 'SimHei', sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #003d7a 0%, #0066cc 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            border-bottom: 4px solid #d4af37;
+        }
+        .header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .header p {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+        .main-content {
+            padding: 50px 40px;
+        }
+        .section {
+            margin-bottom: 35px;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #003d7a;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-left: 5px solid #d4af37;
+            padding-left: 15px;
+        }
+        .info-box {
+            background: #f8f9fa;
+            border-left: 4px solid #0066cc;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        .info-box p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .info-box strong {
+            color: #003d7a;
+        }
+        .date-highlight {
+            background: linear-gradient(120deg, #e8f4f8 0%, #fff3e0 100%);
+            border-left: 4px solid #d4af37;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .date-highlight strong {
+            color: #d32f2f;
+            font-size: 17px;
+        }
+        .test-rules {
+            background: white;
+            border: 2px solid #0066cc;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .test-rules h4 {
+            color: #003d7a;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+        .test-rules ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .test-rules li {
+            color: #333;
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        .test-rules li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #0066cc;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .scope-list {
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        .scope-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .scope-list li {
+            color: #333;
+            margin: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .scope-list li:before {
+            content: "●";
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            font-size: 12px;
+        }
+        .result-box {
+            background: linear-gradient(120deg, #e8f5e9 0%, #e0f2f1 100%);
+            border-left: 4px solid #4caf50;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .result-box p {
+            color: #2e7d32;
+            font-size: 15px;
+            line-height: 1.8;
+            margin: 8px 0;
+        }
+        .result-box strong {
+            color: #1b5e20;
+        }
+        .footer {
+            background: #003d7a;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+        .target-group {
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .target-group h4 {
+            color: #e65100;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+        .target-group p {
+            color: #333;
+            font-size: 14px;
+            line-height: 1.7;
+            margin: 8px 0;
+        }
+        .important-note {
+            background: #ffebee;
+            border-left: 4px solid #d32f2f;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+            font-size: 14px;
+            color: #b71c1c;
+        }
+        .print-button {
+            text-align: center;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .btn {
+            background: linear-gradient(135deg, #003d7a 0%, #0066cc 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            box-shadow: 0 4px 12px rgba(0, 51, 153, 0.3);
+            transform: translateY(-2px);
+        }
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+            }
+            .print-button {
+                display: none;
+            }
+        }
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 32px;
+            }
+            .main-content {
+                padding: 30px 20px;
+            }
+            .section-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 頭部 -->
+        <div class="header">
+            <h1>🎓 2025年內控管理線上測驗</h1>
+            <p>永豐e學院系列培訓計畫</p>
+        </div>
+
+        <!-- 主要內容 -->
+        <div class="main-content">
+            <!-- 測驗日期 -->
+            <div class="section">
+                <h2 class="section-title">📅 測驗日期</h2>
+                <div class="date-highlight">
+                    <p><strong>2025年8月25日(一) ～ 9月5日(五)</strong></p>
+                    <p>共計 <strong>10天</strong> | 線上測驗平台：永豐e學院</p>
+                </div>
+            </div>
+
+            <!-- 測驗對象 -->
+            <div class="section">
+                <h2 class="section-title">👥 測驗對象</h2>
+                <div class="target-group">
+                    <h4>零售通路適用單位</h4>
+                    <p>• 分行經理</p>
+                    <p>• 理財業務主管</p>
+                    <p>• 個金正、副業務主管</p>
+                    <p>• 理財業務專員</p>
+                    <p>• 個金業務專員</p>
+                    <div class="important-note" style="margin-top: 15px; margin-bottom: 0;">
+                        ⚠️ 適用於2025年07月16日(含)前入行之同仁，將由e學院考試系統自動報考
+                    </div>
+                </div>
+            </div>
+
+            <!-- 測驗規則 -->
+            <div class="section">
+                <h2 class="section-title">📋 測驗規則</h2>
+                <div class="test-rules">
+                    <h4>考試形式與要求</h4>
+                    <ul>
+                        <li>題型：單選題</li>
+                        <li>每份試卷：10題</li>
+                        <li>時間限制：30分鐘</li>
+                        <li>及格標準：成績達100分</li>
+                        <li>重考機制：當次不及格時，可於測驗日期內重複應考</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 考試範圍 -->
+            <div class="section">
+                <h2 class="section-title">📚 考試範圍</h2>
+                <div class="scope-list">
+                    <ul>
+                        <li>員工服務準則、員工服務守則暨行為規範要點</li>
+                        <li>理財業務人員管理執行要點</li>
+                        <li>每月『內控管理線上月會』內容</li>
+                        <li>永豐雲-知識庫-2025上半年內控管理案例與重要事項彙整</li>
+                        <li>財富管理/金融市場/保險代理業務手冊</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 測驗結果檢視 -->
+            <div class="section">
+                <h2 class="section-title">✅ 測驗結果檢視</h2>
+                <div class="result-box">
+                    <p><strong>成績提供日期：</strong>2025年9月15日</p>
+                    <p><strong>成績呈報對象：</strong></p>
+                    <p style="padding-left: 20px;">
+                        • 各零售業務督導<br>
+                        • 各區督導
+                    </p>
+                </div>
+            </div>
+
+            <!-- 重要提醒 -->
+            <div class="section">
+                <div class="important-note" style="background: #fff3e0; border-left-color: #ff6f00; color: #e65100; padding: 20px; font-size: 15px;">
+                    <strong style="font-size: 16px;">📢 重要提醒</strong><br><br>
+                    ✓ 請於測驗期間內儘早完成測驗<br>
+                    ✓ 如未達100分，可在測驗期間內多次重考<br>
+                    ✓ 建議提前複習考試範圍的相關內容<br>
+                    ✓ 測驗成績將納入績效評核
+                </div>
+            </div>
+        </div>
+
+        <!-- 列印按鈕 -->
+        <div class="print-button">
+            <button class="btn" onclick="window.print()">🖨️ 列印或另存為PDF</button>
+        </div>
+
+        <!-- 頁腳 -->
+        <div class="footer">
+            <p><strong>永豐銀行人力資源部</strong></p>
+            <p>如有疑問，請洽詢各單位主管或HR部門</p>
+            <p style="margin-top: 15px; opacity: 0.8;">© 2025 SINOPAC Bank. All Rights Reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
